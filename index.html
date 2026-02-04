@@ -3,283 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esther Kituyi | Portfolio</title>
+    <meta name="description" content="Portfolio of Esther Kituyi - Electrical Engineer & Data Scientist">
+    <title>Esther Kituyi | Engineer & Data Scientist</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts: Inter (Body) & JetBrains Mono (Code/Data) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2A004E',   // Deep Purple
-                        secondary: '#500073', // Lighter Purple
-                        accent: '#F14A00',    // Vibrant Orange
+                        bg: '#0B1120',       // Very dark slate
+                        surface: '#1E293B',  // Lighter slate for cards
+                        primary: '#38BDF8',  // Cyan (Data Science)
+                        secondary: '#F59E0B',// Amber (Electrical/Power)
+                        text: '#E2E8F0',     // Off-white text
+                        muted: '#94A3B8'     // Gray text
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'cursor': 'cursor .75s step-end infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        cursor: {
+                            '0%, 100%': { borderColor: 'transparent' },
+                            '50%': { borderColor: '#38BDF8' },
+                        }
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Custom Utilities */
+        /* Base Styles */
         body {
+            background-color: #0B1120;
+            color: #E2E8F0;
             font-family: 'Inter', sans-serif;
-            background-color: #2A004E;
-            color: #ffffff;
+            overflow-x: hidden;
         }
-        
-        /* Modern Scrollbar */
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #2A004E;
+            background: #0B1120;
         }
         ::-webkit-scrollbar-thumb {
-            background: #500073;
-            border-radius: 5px;
+            background: #334155;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #F14A00;
+            background: #38BDF8;
         }
 
-        /* Glassmorphism for Navbar */
-        .glass-nav {
-            background: rgba(42, 0, 78, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Glassmorphism */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Section Title Styling */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 3rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 4px;
-            background-color: #F14A00;
-            border-radius: 2px;
+        /* Grid Background Pattern */
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
         }
 
-        /* Scroll Down Animation */
-        .scroll-downs {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 34px;
-            height: 55px;
-            cursor: pointer;
+        /* Fade Up Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
-        .mousey {
-            width: 3px;
-            padding: 10px 15px;
-            height: 35px;
-            border: 2px solid #fff;
-            border-radius: 25px;
-            opacity: 0.75;
-            box-sizing: content-box;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .scroller {
-            width: 3px;
-            height: 10px;
-            border-radius: 25%;
-            background-color: #F14A00;
-            animation-name: scroll;
-            animation-duration: 2.2s;
-            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-            animation-iteration-count: infinite;
-        }
-        @keyframes scroll {
-            0% { opacity: 0; }
-            10% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(15px); opacity: 0;}
-        }
-
-        /* Form Feedback */
-        #form-feedback {
-            transition: opacity 0.3s ease;
+        
+        /* Coding Font for Accents */
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-primary selection:text-bg relative">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+    
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <!-- Updated Logo Text -->
-                    <span class="text-2xl font-bold text-white tracking-wider">ESTHER<span class="text-accent">.K</span></span>
-                </div>
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded flex items-center justify-center text-bg font-bold text-xl">E</div>
+                    <span class="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">ESTHER<span class="text-secondary">.KITUYI</span></span>
+                </a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
-                        <a href="#about" class="nav-link text-gray-300 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
-                        <a href="#resume" class="nav-link text-gray-300 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Resume</a>
-                        <a href="#projects" class="nav-link text-gray-300 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
-                        <a href="#contact" class="bg-accent hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-orange-900/20 hover:shadow-orange-600/40 transform hover:-translate-y-0.5">Contact</a>
+                    <div class="ml-10 flex items-baseline space-x-8 code-font text-sm">
+                        <a href="#about" class="hover:text-primary transition-colors duration-300"><span class="text-secondary">01.</span> About</a>
+                        <a href="#skills" class="hover:text-primary transition-colors duration-300"><span class="text-secondary">02.</span> Stack</a>
+                        <a href="#projects" class="hover:text-primary transition-colors duration-300"><span class="text-secondary">03.</span> Projects</a>
+                        <a href="#contact" class="px-4 py-2 border border-primary text-primary rounded hover:bg-primary/10 transition-all duration-300">Contact</a>
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-secondary focus:outline-none">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                    <button type="button" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
-        <div class="md:hidden hidden bg-secondary shadow-xl border-t border-white/10" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" onclick="toggleMobileMenu()" class="text-accent block px-3 py-2 rounded-md text-base font-medium bg-black/10">Home</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-accent hover:bg-black/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
-                <a href="#resume" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-accent hover:bg-black/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Resume</a>
-                <a href="#projects" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-accent hover:bg-black/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-white bg-accent hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-bold mt-4 text-center mx-3 shadow-lg">Contact</a>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass border-t border-white/5 absolute w-full" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2 code-font">
+                <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-md hover:bg-white/5 text-primary">01. About</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-md hover:bg-white/5 text-primary">02. Stack</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-md hover:bg-white/5 text-primary">03. Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-md hover:bg-white/5 text-secondary">04. Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute top-20 right-0 w-72 h-72 bg-secondary rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
-        <div class="absolute bottom-20 left-0 w-96 h-96 bg-accent rounded-full filter blur-[100px] opacity-20"></div>
-        
-        <!-- Grid Pattern Overlay -->
-        <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <!-- Animated Blobs -->
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid md:grid-cols-2 gap-12 items-center w-full pt-16 md:pt-0">
-            <div class="space-y-8 order-2 md:order-1">
-                <div class="inline-block px-3 py-1 border border-accent/30 rounded-full bg-accent/10">
-                    <p class="text-accent text-sm font-semibold tracking-wide uppercase">Esther Mukite Kituyi</p>
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    Electrical Engineer & <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Data Scientist.</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div class="order-2 lg:order-1 space-y-6">
+                <p class="code-font text-primary mb-2">Hi, my name is</p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white">
+                    Esther Kituyi.
                 </h1>
+                <h2 class="text-3xl md:text-4xl font-semibold text-muted">
+                    I build <span id="typewriter" class="text-secondary border-r-4 border-secondary pr-1"></span>
+                </h2>
                 
-                <p class="text-gray-300 text-lg max-w-lg leading-relaxed border-l-4 border-accent pl-4">
-                    Bridging power systems and predictive intelligence. Specializing in Smart Grid anomaly detection and optimizing infrastructure for the green energy transition.
+                <p class="text-muted text-lg max-w-lg leading-relaxed pt-4">
+                    An Electrical Engineer & Data Scientist specializing in <strong class="text-white">Smart Grid anomaly detection</strong> and <strong class="text-white">IoT infrastructure</strong>. I bridge the gap between hardware systems and predictive intelligence to drive the green energy transition.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#projects" class="group relative px-8 py-3 bg-accent text-white font-bold rounded-full overflow-hidden shadow-lg shadow-orange-900/30 transition-all hover:shadow-orange-600/40 text-center">
-                        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
-                        <span class="relative">View Engineering Work</span>
+                <div class="flex flex-wrap gap-4 pt-6 code-font">
+                    <a href="#projects" class="px-6 py-3 bg-transparent border border-secondary text-secondary hover:bg-secondary/10 font-bold rounded transition-all">
+                        Check my work
                     </a>
-                    <a href="#contact" class="px-8 py-3 border border-gray-500 text-gray-300 font-medium rounded-full hover:border-white hover:text-white hover:bg-white/5 transition-all text-center">
+                    <a href="#contact" class="px-6 py-3 bg-primary/10 text-primary hover:bg-primary/20 font-bold rounded transition-all">
                         Contact Me
                     </a>
                 </div>
             </div>
             
-            <!-- Hero Image / Avatar -->
-            <div class="relative flex justify-center order-1 md:order-2">
-                <div class="w-72 h-72 md:w-[450px] md:h-[450px] relative">
-                    <!-- Glow Effect -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-accent to-secondary rounded-full blur-2xl opacity-40 animate-pulse"></div>
-                    
-                    <!-- Image Container -->
-                    <div class="relative w-full h-full rounded-full border-4 border-white/10 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center overflow-hidden backdrop-blur-sm">
-                         
-                         <!-- Ensure 'Passport 2.JPG' is in the same folder as this HTML file -->
-                         <img src="Passport 2.JPG" alt="Esther Mukite Kituyi" class="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500">
-                         
+            <!-- Hero Image -->
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+                <div class="relative w-72 h-72 md:w-[400px] md:h-[400px] group">
+                    <div class="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
+                    <div class="relative w-full h-full rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                         <!-- Ensure 'Passport 2.JPG' is in the folder -->
+                         <img src="Passport 2.JPG" alt="Esther Mukite Kituyi" class="w-full h-full object-cover">
+                         <div class="absolute inset-0 bg-primary/30 group-hover:opacity-0 transition-opacity duration-500 mix-blend-multiply"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="scroll-downs">
-            <div class="mousey">
-                <div class="scroller"></div>
-            </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-muted">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-secondary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold section-title">About Me</h2>
+    <section id="about" class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="text-2xl font-bold text-secondary code-font">01.</span>
+                <h2 class="text-3xl font-bold text-white">About Me</h2>
+                <div class="h-px bg-white/20 flex-grow"></div>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="bg-primary p-8 rounded-2xl shadow-xl border border-white/5">
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        I am an Electrical Engineer and Data Science Fellow focused on the intersection of power systems and predictive intelligence.
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 text-muted leading-relaxed space-y-4">
+                    <p>
+                        Hello! My name is Esther, and I enjoy creating things that live on the internet and in the physical world. My interest in engineering started when I realized that <span class="text-primary">power systems</span> could be smarter, more efficient, and data-driven.
                     </p>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        My expertise lies in developing anomaly detection systems for smart grids and optimizing infrastructure for the green energy transition. I am skilled in Python, SQL, and IoT integration, with a strong background in both hardware prototyping and data modeling.
+                    <p>
+                        Fast-forward to today, I hold a <span class="text-white">BSc in Electrical & Electronics Engineering</span> and I am a Fellow in Data Science. My main focus these days is building accessible, inclusive products and digital experiences at the intersection of <span class="text-secondary">Hardware (IoT)</span> and <span class="text-primary">Software (ML)</span>.
                     </p>
-                    
-                    <div class="mt-8 grid grid-cols-2 gap-4 text-center">
-                        <div class="p-4 bg-secondary rounded-lg">
-                            <span class="block text-xl font-bold text-accent">BSc.</span>
-                            <span class="text-sm text-gray-400">Electrical & Electronics Eng.</span>
-                        </div>
-                        <div class="p-4 bg-secondary rounded-lg">
-                            <span class="block text-xl font-bold text-accent">Fellow</span>
-                            <span class="text-sm text-gray-400">Data Science & Engineering</span>
-                        </div>
-                    </div>
+                    <p>
+                        Here are a few highlights of my journey:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 code-font text-sm mt-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-secondary"></i> Smart Grids</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-secondary"></i> Python & SQL</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-secondary"></i> IoT Prototyping</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-secondary"></i> Anomaly Detection</li>
+                    </ul>
                 </div>
-
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-semibold">Technical Skills</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Power Systems & Smart Grid</span>
-                                <span class="text-accent">90%</span>
-                            </div>
-                            <div class="w-full bg-primary rounded-full h-2.5">
-                                <div class="bg-accent h-2.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Python (Pandas, Scikit-Learn)</span>
-                                <span class="text-accent">85%</span>
-                            </div>
-                            <div class="w-full bg-primary rounded-full h-2.5">
-                                <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>SQL / PostgreSQL</span>
-                                <span class="text-accent">80%</span>
-                            </div>
-                            <div class="w-full bg-primary rounded-full h-2.5">
-                                <div class="bg-accent h-2.5 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>IoT Systems & Electronics</span>
-                                <span class="text-accent">85%</span>
-                            </div>
-                            <div class="w-full bg-primary rounded-full h-2.5">
-                                <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
+                <div class="md:col-span-1">
+                    <div class="bg-surface p-6 rounded-lg border border-white/5 shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-center">
+                            <i class="fas fa-graduation-cap text-4xl text-primary mb-4"></i>
+                            <h3 class="font-bold text-white">Education</h3>
+                            <p class="text-sm text-muted mt-2">BSc. Electrical & Electronics Eng.</p>
+                            <p class="text-xs text-secondary mt-1">Data Science Fellow</p>
                         </div>
                     </div>
                 </div>
@@ -287,265 +242,307 @@
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-primary border-t border-b border-white/5 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold section-title mb-8">My Resume</h2>
-            <div class="max-w-2xl mx-auto">
-                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                    Interested in my detailed work history in Engineering and Data Science? 
-                    Download my CV to see my experience with Power Systems, Medallion Architecture, and System Validation.
-                </p>
-                
-                <div class="p-8 bg-secondary rounded-2xl shadow-xl border border-white/5 inline-block w-full max-w-md hover:transform hover:scale-105 transition-all duration-300">
-                    <div class="flex flex-col items-center gap-6">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-accent mb-2">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        
-                        <a href="Kituyi_Esther_CV.pdf" download class="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-accent rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg shadow-orange-900/30 hover:bg-orange-600">
-                            <span>Download CV (PDF)</span>
-                            <svg class="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                            </svg>
-                        </a>
-                        <p class="text-sm text-gray-400">Esther Mukite Kituyi_CV.pdf</p>
+    <!-- Skills / Tech Stack Section -->
+    <section id="skills" class="py-24 bg-surface/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="text-2xl font-bold text-secondary code-font">02.</span>
+                <h2 class="text-3xl font-bold text-white">Technical Stack</h2>
+                <div class="h-px bg-white/20 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Data Science -->
+                <div class="bg-bg p-6 rounded-lg border border-white/5 group hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-database text-primary"></i> Data Science
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">Python</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">Pandas</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">Scikit-Learn</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">SQL (PostgreSQL)</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">Jupyter</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-primary code-font">Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Engineering -->
+                <div class="bg-bg p-6 rounded-lg border border-white/5 group hover:border-secondary/50 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-bolt text-secondary"></i> Engineering
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">Circuit Design</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">IoT Systems</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">GSM Modules</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">Arduino/C++</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">Power Systems</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-secondary code-font">MATLAB</span>
+                    </div>
+                </div>
+
+                <!-- Workflow -->
+                <div class="bg-bg p-6 rounded-lg border border-white/5 group hover:border-white/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-code-branch text-muted"></i> Workflow
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-muted code-font">Git & GitHub</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-muted code-font">VS Code</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-muted code-font">Medallion Arch.</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-muted code-font">Agile</span>
+                        <span class="px-3 py-1 bg-surface rounded text-sm text-muted code-font">Technical Writing</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Section -->
-    <section id="projects" class="py-20 bg-secondary relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold section-title">Selected Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="text-2xl font-bold text-secondary code-font">03.</span>
+                <h2 class="text-3xl font-bold text-white">Selected Projects</h2>
+                <div class="h-px bg-white/20 flex-grow"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-network-wired text-6xl text-gray-700 group-hover:text-primary transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Smart Grid Anomaly Detection</h3>
+                        <div class="text-xs code-font text-secondary mb-3">DATA ENGINEERING & ML</div>
+                        <p class="text-muted text-sm mb-4">
+                            Engineered a system using Python to identify technical faults and energy theft signatures in unstructured sensor data. Utilized Medallion Architecture for data pipelines.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs code-font text-gray-400">
+                            <span>Python</span>
+                            <span>Scikit-Learn</span>
+                            <span>ETL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-microchip text-6xl text-gray-700 group-hover:text-secondary transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-secondary transition-colors">IoT Smart Metering</h3>
+                        <div class="text-xs code-font text-secondary mb-3">HARDWARE & IOT</div>
+                        <p class="text-muted text-sm mb-4">
+                            Designed a GSM-enabled prototype for real-time utility monitoring. Focused on low-latency data transmission and cloud dashboard integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs code-font text-gray-400">
+                            <span>Arduino</span>
+                            <span>C++</span>
+                            <span>GSM/GPRS</span>
+                            <span>Cloud API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-charging-station text-6xl text-gray-700 group-hover:text-primary transition-colors duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">E-Mobility Data Analysis</h3>
+                        <div class="text-xs code-font text-secondary mb-3">DATA ANALYSIS</div>
+                        <p class="text-muted text-sm mb-4">
+                            Analyzed energy demand patterns related to electric vehicle charging infrastructure to support green energy transition planning.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs code-font text-gray-400">
+                            <span>Pandas</span>
+                            <span>Seaborn</span>
+                            <span>Forecasting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-8 mt-4">
-                <!-- Project Card 1: Smart Grid -->
-                <div class="bg-primary rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
-                    <div class="h-48 bg-gray-800 relative overflow-hidden">
-                         <div class="absolute inset-0 flex items-center justify-center text-gray-600 bg-gray-900 group-hover:scale-110 transition-transform duration-500">
-                             <span class="text-4xl">⚡</span> 
-                         </div>
-                         <div class="absolute inset-0 bg-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <button class="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">View Details</button>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-accent text-xs font-bold tracking-wider uppercase">Data Engineering</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">Smart Grid Anomaly Detection</h3>
-                        <p class="text-gray-400 text-sm mb-4">Engineered a system using Python to identify technical faults and energy theft signatures in unstructured sensor data.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">Python</span>
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">Medallion Arch.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2: IoT Meter -->
-                <div class="bg-primary rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
-                    <div class="h-48 bg-gray-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 bg-gray-900 group-hover:scale-110 transition-transform duration-500">
-                             <span class="text-4xl">📡</span>
-                         </div>
-                         <div class="absolute inset-0 bg-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <button class="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">View Details</button>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-accent text-xs font-bold tracking-wider uppercase">Hardware & IoT</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">IoT Smart Metering System</h3>
-                        <p class="text-gray-400 text-sm mb-4">Designed a GSM-enabled prototype for real-time utility monitoring, focusing on data collection for energy optimization.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">IoT</span>
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">GSM</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: E-Mobility -->
-                <div class="bg-primary rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
-                    <div class="h-48 bg-gray-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-600 bg-gray-900 group-hover:scale-110 transition-transform duration-500">
-                             <span class="text-4xl">🔋</span>
-                         </div>
-                         <div class="absolute inset-0 bg-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <button class="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">View Details</button>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-accent text-xs font-bold tracking-wider uppercase">Research</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">E-Mobility Data Analysis</h3>
-                        <p class="text-gray-400 text-sm mb-4">Analyzed energy demand patterns related to electric vehicle charging infrastructure to support green energy transition.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">Data Analysis</span>
-                            <span class="px-2 py-1 bg-secondary text-xs rounded text-gray-300">Green Energy</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mt-12">
+                <!-- UPDATED GITHUB LINK -->
+                <a href="https://github.com/EstherLauraKituyi" target="_blank" class="inline-block px-8 py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-all code-font">
+                    <i class="fab fa-github mr-2"></i> View More on GitHub
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-primary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold section-title">Contact Me</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12 mt-8">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4">Get in touch</h3>
-                    <p class="text-gray-300 mb-8 leading-relaxed">
-                        I am currently available for opportunities in Data Science, Electrical Engineering, and Smart Grid projects.
+    <section id="contact" class="py-24 bg-surface/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="text-2xl font-bold text-secondary code-font">04.</span>
+                <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
+                <div class="h-px bg-white/20 flex-grow"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info Side -->
+                <div class="space-y-6">
+                    <p class="text-muted text-lg leading-relaxed">
+                        I am currently looking for new opportunities in Data Science and Electrical Engineering. 
                     </p>
-                    
-                    <div class="space-y-4">
-                        <!-- Email -->
-                        <div class="flex items-center space-x-4 text-gray-300 hover:text-accent transition-colors">
-                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <span>mukiteesther90@gmail.com</span>
-                        </div>
-                        <!-- Phone -->
-                         <div class="flex items-center space-x-4 text-gray-300 hover:text-accent transition-colors">
-                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            </div>
-                            <span>+254 757 737 763</span>
-                        </div>
+                    <p class="text-muted text-lg leading-relaxed">
+                        Whether you have a question about Smart Grids, want to collaborate on a project, or just want to say hi, feel free to drop a message!
+                    </p>
+
+                    <div class="pt-6">
                         <!-- Location -->
-                        <div class="flex items-center space-x-4 text-gray-300 hover:text-accent transition-colors">
-                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div class="flex items-center gap-4 mb-4 group cursor-pointer">
+                            <div class="w-12 h-12 bg-surface rounded flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-bg transition-all">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <span>Nairobi, Kenya</span>
+                            <span class="text-muted group-hover:text-white transition-colors">Nairobi, Kenya</span>
                         </div>
-                        <!-- LinkedIn -->
-                        <div class="flex items-center space-x-4 text-gray-300 hover:text-accent transition-colors">
-                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent">
-                                <!-- LinkedIn Icon -->
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        
+                        <!-- Email Link -->
+                        <a href="mailto:mukiteesther90@gmail.com" class="flex items-center gap-4 mb-4 group">
+                            <div class="w-12 h-12 bg-surface rounded flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-bg transition-all">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <a href="https://www.linkedin.com/in/estherlaura-mukite-256880224/" target="_blank" class="hover:underline">LinkedIn Profile</a>
+                            <span class="text-muted group-hover:text-white transition-colors">mukiteesther90@gmail.com</span>
+                        </a>
+
+                        <!-- NEW: LinkedIn Link -->
+                        <a href="https://www.linkedin.com/in/estherlaura-mukite-256880224/" target="_blank" class="flex items-center gap-4 mb-4 group">
+                            <div class="w-12 h-12 bg-surface rounded flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-bg transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <span class="text-muted group-hover:text-white transition-colors">LinkedIn Profile</span>
+                        </a>
+
+                        <!-- Resume Button -->
+                        <div class="flex items-center gap-4 mt-8">
+                             <a href="Kituyi_Esther_CV.pdf" download class="px-6 py-3 bg-secondary text-bg font-bold rounded hover:bg-amber-400 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-file-download"></i> Download Resume
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <form id="contact-form" class="bg-secondary p-8 rounded-2xl shadow-xl border border-white/5 space-y-6">
-                    <div class="grid grid-cols-2 gap-6">
+                <!-- Contact Form Side -->
+                <div class="bg-surface p-8 rounded-lg border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-6 code-font">Send a Message</h3>
+                    <form id="contactForm" onsubmit="sendMail(event)" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">First Name</label>
-                            <input type="text" class="w-full bg-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Esther">
+                            <label class="block text-sm text-secondary mb-1 code-font">Name</label>
+                            <input type="text" id="name" required class="w-full bg-bg border border-white/10 rounded px-4 py-3 text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all placeholder-gray-600" placeholder="John Doe">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
-                            <input type="text" class="w-full bg-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Kituyi">
+                            <label class="block text-sm text-secondary mb-1 code-font">What do you need?</label>
+                            <input type="text" id="subject" required class="w-full bg-bg border border-white/10 rounded px-4 py-3 text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all placeholder-gray-600" placeholder="Project Collaboration, Hiring, etc.">
                         </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                        <input type="email" class="w-full bg-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="you@example.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                        <textarea rows="4" class="w-full bg-primary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Write your message here..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-orange-900/20">
-                        Send Message
-                    </button>
-                    <p id="form-feedback" class="text-green-400 text-center font-medium opacity-0">Message sent successfully!</p>
-                </form>
+                        <div>
+                            <label class="block text-sm text-secondary mb-1 code-font">Message</label>
+                            <textarea id="message" rows="4" required class="w-full bg-bg border border-white/10 rounded px-4 py-3 text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all placeholder-gray-600" placeholder="Hello Esther, I would like to discuss..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-cyan-400 text-bg font-bold py-3 rounded transition-all shadow-lg shadow-cyan-900/20">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-20 text-center text-sm text-gray-600 code-font border-t border-white/10 pt-8">
+                <p>Designed & Built by Esther Kituyi</p>
+                <p class="mt-2 text-xs">&copy; <span id="year"></span> All rights reserved.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-primary border-t border-white/10 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-500">© 2024 Esther Kituyi. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
     <script>
-        // Mobile Menu Toggle Logic
+        // 1. Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Navbar Scroll Effect & ScrollSpy
+        // 3. Navbar Scroll Glass Effect
         const navbar = document.getElementById('navbar');
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Scroll Event Listener
-        window.addEventListener('scroll', function() {
-            // 1. Navbar Glass Effect
-            if (window.scrollY > 50) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
                 navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-transparent', 'glass');
             }
-
-            // 2. ScrollSpy: Highlight active menu item
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                // Check if we have scrolled to this section (minus offset for navbar)
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            // Update the active state in the navbar
-            navLinks.forEach(link => {
-                link.classList.remove('text-accent');
-                link.classList.add('text-gray-300');
-                
-                // Strict check to ensure we match the correct anchor ID
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.remove('text-gray-300');
-                    link.classList.add('text-accent');
-                }
-            });
         });
 
-        // 3. Smooth Scroll for "Scroll Down" Mouse Icon (Home Section)
-        const scrollDownBtn = document.querySelector('.scroll-downs');
-        if (scrollDownBtn) {
-            scrollDownBtn.addEventListener('click', () => {
-                const aboutSection = document.getElementById('about');
-                if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+        // 4. Typewriter Effect
+        const words = ["Intelligent Systems.", "Smart Grids.", "Data Pipelines."];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const heading = document.getElementById('typewriter');
+            const word = words[i];
+            let currentText = heading.textContent;
+            
+            if (!heading.getAttribute('data-deleting')) {
+                // Typing
+                heading.textContent = word.substring(0, currentText.length + 1);
+                if (currentText.length === word.length) {
+                    heading.setAttribute('data-deleting', 'true');
+                    setTimeout(typeWriter, 2000); // Wait before deleting
+                } else {
+                    setTimeout(typeWriter, 100);
                 }
-            });
+            } else {
+                // Deleting
+                heading.textContent = word.substring(0, currentText.length - 1);
+                if (currentText.length === 0) {
+                    heading.removeAttribute('data-deleting');
+                    i = (i + 1) % words.length;
+                    setTimeout(typeWriter, 500);
+                } else {
+                    setTimeout(typeWriter, 50);
+                }
+            }
         }
+        document.addEventListener('DOMContentLoaded', typeWriter);
 
-        // 4. Form Submission Handling (Demo)
-        const contactForm = document.getElementById('contact-form');
-        const feedbackMsg = document.getElementById('form-feedback');
+        // 5. Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
 
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Show success message
-                feedbackMsg.classList.remove('opacity-0');
-                
-                // Reset form
-                contactForm.reset();
-
-                // Hide message after 3 seconds
-                setTimeout(() => {
-                    feedbackMsg.classList.add('opacity-0');
-                }, 3000);
-            });
+        // 6. Contact Form Email Handler
+        function sendMail(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const subjectInput = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Construct the mailto link
+            const email = "mukiteesther90@gmail.com";
+            const subject = encodeURIComponent(`Portfolio Contact: ${subjectInput}`);
+            const body = encodeURIComponent(`Hi Esther,\n\nMy name is ${name}.\n\n${message}`);
+            
+            // Open the email client
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
         }
     </script>
 </body>
