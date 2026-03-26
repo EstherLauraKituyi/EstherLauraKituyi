@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Hi there! 👋 I'm EstherLaura ✨</h1>
-  <h3> ⚡ Electrical Engineer | 📊 Data Scientist | 🌸 Tech Enthusiast </h3>
+  <h3> ⚡ Electrical Engineer | 📊 Data Scientist | 🌸 Woman in Tech </h3>
 </div>
 
 <br/>
@@ -14,8 +14,8 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 - 🔭 **Currently working on:** COVID-19 Sentiment Analysis (NLP) – tackling the challenge of mapping soft labels to a continuous RMSE target! 
 - 🏆 **Recent Win:** Reached **Rank #1** on the Zindi Leaderboard for the Tanzania Tourism Expenditure Prediction challenge using XGBoost. 🥇
 - 🌱 **Currently exploring:** Advanced BigQuery, Deep Learning (CNNs), and perfecting my MLOps pipelines.
-- 💼 **Open to opportunities:** I am actively interviewing and looking for exciting Data Science roles (A special hello to recruiters from *Athena* and the *International Potato Center*! 👋)
-- ⚡ **Fun Fact:** When I'm not designing circuit boards or training ML models, I'm probably brainstorming the next big thing in the green energy transition!
+- 💼 **Open to opportunities:** I am actively interviewing and looking for exciting Data Science roles 
+- ⚡ **Fun Fact:** When I'm not training ML models, I'm probably brainstorming the next big thing in the green energy transition!
 
 <br/>
 
@@ -67,7 +67,7 @@ I'm always open to chatting about data, smart grids, or new career opportunities
   <a href="mailto:mukiteesther90@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
-  <!-- Replace '#' with your actual deployed portfolio URL -->
+ 
   <a href="https://estherlaurakituyi.github.io/EstherLauraKituyi/">
     <img src="https://img.shields.io/badge/Portfolio-1E293B?style=for-the-badge&logo=safari&logoColor=38BDF8" alt="Portfolio" />
   </a>
