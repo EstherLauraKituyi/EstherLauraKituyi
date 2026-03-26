@@ -39,14 +39,16 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 
 <br/>
 
+
 ### 📈 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=EstherLauraKituyi&show_icons=true&hide_border=true&bg_color=0B1120&title_color=F59E0B&icon_color=38BDF8&text_color=E2E8F0&cache_seconds=86400" height="160" alt="Esther's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=EstherLauraKituyi&layout=compact&hide_border=true&bg_color=0B1120&title_color=F59E0B&text_color=E2E8F0&cache_seconds=86400" height="160" alt="Top Languages" />
+  <!-- GitHub Streak Stats (Hosted on a highly stable server) -->
+  <img src="https://streak-stats.demolab.com/?user=EstherLauraKituyi&background=0B1120&border=0B1120&stroke=38BDF8&ring=F59E0B&fire=F59E0B&currStreakNum=E2E8F0&sideNums=E2E8F0&currStreakLabel=38BDF8&sideLabels=38BDF8&dates=E2E8F0" height="160" alt="Esther's GitHub Streak" />
+  
+  <!-- Top Languages Summary Card -->
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=EstherLauraKituyi&theme=tokyonight" height="160" alt="Top Languages" />
 </div>
-
-<br/>
 
 ### 🎀 Highlight Projects
 *   **SuperLender Default Risk:** Developed a credit scoring classification model to assess customer creditworthiness. (Core project for my M-KOPA application!)
