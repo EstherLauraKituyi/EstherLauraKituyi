@@ -14,7 +14,7 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 - 🔭 **Currently working on:** COVID-19 Sentiment Analysis (NLP) – tackling the challenge of mapping soft labels to a continuous RMSE target! 
 - 🏆 **Recent Win:** Reached **Rank #1** on the Zindi Leaderboard for the Tanzania Tourism Expenditure Prediction challenge using XGBoost. 🥇
 - 🌱 **Currently exploring:** Advanced BigQuery, Deep Learning (CNNs), and perfecting my MLOps pipelines.
-- 💼 **Open to opportunities:** I am actively interviewing and looking for exciting Data Science roles 
+- 💼 **Open to opportunities:** I am actively interviewing and looking for exciting Data Science roles. 
 - ⚡ **Fun Fact:** When I'm not training ML models, I'm probably brainstorming the next big thing in the green energy transition!
 
 <br/>
@@ -42,9 +42,8 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 ### 📈 GitHub Stats
 
 <div align="center">
-  <!-- These cards dynamically update. The theme matches the Cyan/Amber aesthetic from your portfolio! -->
-  <img src="https://github-readme-stats.vercel.app/api?username=EstherLauraKituyi&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0B1120&title_color=F59E0B&icon_color=38BDF8&text_color=E2E8F0" height="160" alt="Esther's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EstherLauraKituyi&layout=compact&theme=tokyonight&hide_border=true&bg_color=0B1120&title_color=F59E0B&text_color=E2E8F0" height="160" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=EstherLauraKituyi&show_icons=true&hide_border=true&bg_color=0B1120&title_color=F59E0B&icon_color=38BDF8&text_color=E2E8F0&cache_seconds=86400" height="160" alt="Esther's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=EstherLauraKituyi&layout=compact&hide_border=true&bg_color=0B1120&title_color=F59E0B&text_color=E2E8F0&cache_seconds=86400" height="160" alt="Top Languages" />
 </div>
 
 <br/>
