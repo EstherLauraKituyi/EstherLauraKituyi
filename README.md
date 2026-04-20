@@ -15,8 +15,7 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 - 🏆 **Recent Win:** Reached **Rank #1** on the Zindi Leaderboard for the Tanzania Tourism Expenditure Prediction challenge using XGBoost. 🥇
 - 🌱 **Currently exploring:** Advanced BigQuery, Deep Learning (CNNs), and perfecting my MLOps pipelines.
 - 💼 **Open to opportunities:** I am actively interviewing and looking for exciting Data Science roles. 
-- ⚡ **Fun Fact:** When I'm not training ML models, I'm probably brainstorming the next big thing in the green energy transition!
-
+- ⚡ **Fun Fact:** When I'm not training ML models, I'm probably out for karaoke or somewhere hiking
 <br/>
 
 ### 🛠️ My Tech Stack & Tools
