@@ -51,7 +51,7 @@ Today, I build inclusive products at the intersection of **Hardware (IoT)** and 
 </div>
 
 ### 🎀 Highlight Projects
-*   **SuperLender Default Risk:** Developed a credit scoring classification model to assess customer creditworthiness. (Core project for my M-KOPA application!)
+*   **SuperLender Default Risk:** Developed a credit scoring classification model to assess customer creditworthiness.
 *   **Smart Grid Anomaly Detection:** Engineered a Python-based system to spot energy theft and technical faults in unstructured sensor data using Medallion Architecture.
 *   **Waste-to-Cash Image Validation:** Built a CNN for a "cash for trash" initiative to validate waste imagery via synthetic dataset generation.
 
